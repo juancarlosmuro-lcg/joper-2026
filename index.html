@@ -274,6 +274,32 @@ table.t tr:last-child td,table.t tr:last-child th{border-bottom:none}
 @media(max-width:980px){.agents{padding:20px}.ag-flow{grid-template-columns:1fr}.ag-meta{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.ag-log li{opacity:1;transform:none}.ag-cursor{animation:none}}
 
+
+/* ---- titular de panel mesh a todo el ancho ---- */
+.mesh h3.wide{font-size:clamp(25px,2.85vw,40px);line-height:1.1;letter-spacing:-.025em;
+ max-width:none;margin:14px 0 20px}
+.mesh.pad{padding:clamp(28px,3vw,46px)}
+/* ---- tres tarjetas de cifra de la sección 01 ---- */
+.stat{background:var(--neutral-0);border:1px solid var(--n200);border-radius:var(--r-lg);
+ padding:26px 24px 22px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;height:100%;
+ position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;inset:0 0 auto;height:4px;
+ background:linear-gradient(90deg,var(--green-500),var(--lime))}
+.stat .k{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-600)}
+.stat .v{font-size:clamp(52px,6vw,76px);font-weight:300;letter-spacing:-.04em;line-height:1;
+ color:var(--green-800);margin:14px 0 0}
+.stat .v sup{font-size:.32em;font-weight:700;top:-1.05em;position:relative;left:3px;letter-spacing:0;color:var(--green-600)}
+.stat .d{font-size:14.5px;line-height:1.52;color:var(--n600);margin:14px 0 0;flex:1}
+.stat .f{font-size:11.5px;color:var(--n400);line-height:1.4;margin-top:16px;padding-top:11px;border-top:1px solid var(--n100)}
+.quote01{background:var(--neutral-0);border:1px solid var(--n200);border-radius:var(--r-lg);
+ box-shadow:var(--shadow-sm);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px;padding:30px}
+.quote01 blockquote{margin:0;font-size:clamp(19px,1.75vw,25px);line-height:1.38;letter-spacing:-.018em;
+ color:var(--n900);font-weight:500;padding-left:22px;border-left:4px solid var(--green-500)}
+.quote01 .qs{align-self:center}
+.quote01 .qs p{font-size:14.2px;line-height:1.55;color:var(--n600);margin:0}
+.quote01 .qs .f{font-size:11.5px;color:var(--n400);margin-top:14px;padding-top:11px;border-top:1px solid var(--n100)}
+@media(max-width:980px){.quote01{grid-template-columns:1fr;gap:20px;padding:24px}}
+
 /* ---------- MÓDULO · Alianza Claude Partner Network ---------- */
 
 /* Retícula de portada: titular a la izquierda, tarjeta a la derecha.
@@ -473,9 +499,9 @@ table.t tr:last-child td,table.t tr:last-child th{border-bottom:none}
  <p class="lede">Joper lleva 66 años resolviendo el “cómo se fabrica”. Lo que cambió en 2026 es el “cuánto cuesta cada decisión”: qué acero entra, qué referencia cruza la frontera y quién la arma. Las tres se deciden en la misma nave de Gómez Palacio.</p>
 </div>
 <div class="wrap">
- <div class="mesh">
+ <div class="mesh pad">
   <p class="eyebrow">Core Business Hypothesis</p>
-  <h3 style="max-width:30ch">Fabrican de origen y venden por canal indirecto. En 2026 el margen dejó de estar donde estaba el control.</h3>
+  <h3 class="wide">Fabrican de origen y venden por canal indirecto. En 2026 el margen dejó de estar donde estaba el control.</h3>
   <p>Joper funde, troquela, suelda y pinta en una sola planta, y de ahí alimenta dos negocios con economías opuestas:
   <b style="color:var(--lime)">Joper Ligero</b>, catálogo en serie donde la compañía declara el 70 % del mercado nacional de revolvedoras, y
   <b style="color:var(--lime)">Joper Móvil</b>, carrocería a la medida sobre el chasis del cliente, en un mercado donde el líder nacional de semirremolques no alcanza el 11 % de participación.</p>
@@ -498,21 +524,35 @@ table.t tr:last-child td,table.t tr:last-child th{border-bottom:none}
   </div>
  </div>
 
- <div class="g2 sec01" style="margin-top:20px">
-  <div class="card">
-   <p class="eyebrow" style="color:var(--green-600)">Lo que dice la compañía</p>
-   <p class="q01">“Somos una empresa dedicada a la fabricación y comercialización de equipo para la industria y la construcción, otorgando un servicio de manera eficiente, asegurando la calidad con la participación de nuestro factor humano.”</p>
-   <p style="font-size:13px;color:var(--n500);margin-top:10px">Misión publicada de Grupo Joper. La frase pone a la fabricación y al factor humano en el mismo renglón; es exactamente el cruce donde aterrizan la jornada de 2027 y el arancel de 2026.</p>
-   <p class="src">Fuente 1 · joper.com/nosotros, consultado el 29 de octubre de 2026.</p>
+ 
+ <div class="quote01" style="margin-top:20px">
+  <blockquote>“Somos una empresa dedicada a la fabricación y comercialización de equipo para la industria y la construcción, otorgando un servicio de manera eficiente, asegurando la calidad con la participación de nuestro factor humano.”</blockquote>
+  <div class="qs">
+   <p class="eyebrow" style="color:var(--green-600);margin:0 0 10px">Lo que dice la compañía</p>
+   <p>Misión publicada de Grupo Joper. La frase pone a la fabricación y al factor humano en el mismo renglón; es exactamente el cruce donde aterrizan la jornada de 2027 y el arancel de 2026.</p>
+   <p class="f">Fuente 1 · joper.com/nosotros, consultado el 29 de octubre de 2026.</p>
   </div>
-  <div class="card">
-   <p class="eyebrow" style="color:var(--green-600)">Tres datos que la convierten en pesos</p>
-   <div class="dgrid">
-    <div><span class="big num">57</span><span>referencias fabricadas sobre las que se puede calcular contribución individual: 30 de Joper Ligero y 27 de Joper Móvil.</span></div>
-    <div><span class="big num">878</span><span>fracciones de <b>insumos</b> alcanzadas por el decreto de 2026, con las tasas más altas en productos siderúrgicos.</span></div>
-    <div><span class="big num">25<sup>%</sup></span><span>de Sección 232 sobre derivados de acero con al menos 15 % de contenido, al entrar a Estados Unidos.</span></div>
-   </div>
-   <p class="src">Fuentes 1, 5 y 7 · joper.com · DOF 29 dic 2025 · proclama presidencial de EE. UU. del 2 abr 2026.</p>
+ </div>
+
+ <p class="eyebrow" style="color:var(--green-600);margin:34px 0 14px">Tres datos que la convierten en pesos</p>
+ <div class="g3">
+  <div class="stat">
+   <span class="k">Catálogo propio</span>
+   <span class="v num">57</span>
+   <p class="d">Referencias fabricadas sobre las que se puede calcular contribución individual: <b>30 de Joper Ligero y 27 de Joper Móvil</b>.</p>
+   <p class="f">Fuente 1 · joper.com, octubre de 2026.</p>
+  </div>
+  <div class="stat">
+   <span class="k">Costo de insumos</span>
+   <span class="v num">878</span>
+   <p class="d">Fracciones de <b>insumos</b> alcanzadas por el decreto vigente desde el 1 de enero de 2026, con las tasas más altas en productos siderúrgicos.</p>
+   <p class="f">Fuente 5 · DOF, 29 de diciembre de 2025.</p>
+  </div>
+  <div class="stat">
+   <span class="k">Acceso a Estados Unidos</span>
+   <span class="v num">25<sup>%</sup></span>
+   <p class="d">De Sección 232 sobre derivados de acero con al menos <b>15 % de contenido</b>, al entrar a Estados Unidos, aunque cumplan T-MEC.</p>
+   <p class="f">Fuente 7 · proclama presidencial de EE. UU., 2 de abril de 2026.</p>
   </div>
  </div>
 </div></section>
@@ -759,9 +799,9 @@ table.t tr:last-child td,table.t tr:last-child th{border-bottom:none}
    <p>Cada cuánto se actualiza lista de precios, surtido sugerido y disponibilidad de refacciones hacia la red. Con costos moviéndose por decreto, la cadencia del canal deja de ser un tema administrativo y pasa a ser un tema de margen.</p></div>
  </div>
 
- <div class="mesh" style="margin-top:22px">
+ <div class="mesh pad" style="margin-top:22px">
   <p class="eyebrow">Dónde entra London Consulting Group México</p>
-  <h3 style="max-width:32ch">No solamente identificamos qué debería cambiar; ayudamos a implementar los cambios y hacer que las cosas sucedan</h3>
+  <h3 class="wide">No solamente identificamos qué debería cambiar; ayudamos a implementar los cambios y hacer que las cosas sucedan</h3>
   <p>La Metodología de London Consulting Group México trabaja hombro a hombro con el equipo del cliente dentro de la operación: se diseña el modelo de costo, se instala el modelo de gestión que lo mantiene vivo, se capacita a quien lo va a usar y se acompaña la implementación hasta que los indicadores se sostienen solos.</p>
   <p>La firma opera desde 1991, ha implementado más de 5,000 proyectos y <b style="color:var(--lime)">compromete por contrato un retorno mínimo de 1:1 sobre la inversión del cliente</b>, con un promedio histórico de 5:1. Los resultados de la sección 13 están publicados y respaldados por una carta firmada por la dirección de cada compañía.</p>
  </div>
